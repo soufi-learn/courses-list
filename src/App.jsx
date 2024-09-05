@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import CoursesList from "./components/pages/CoursesList";
-import RegisterForm from "./components/pages/RegisterForm";
+import RegisterForm from "./components/pages/LoginForm";
 import VerifyForm from "./components/pages/VerifyForm";
 import Header from "./components/Header";
 import HomePage from "./components/pages/HomePage";

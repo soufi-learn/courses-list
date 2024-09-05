@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <>
-      <div className="px-20 flex items-center gap-10">
-        <section className="w-1/2">
-          <img src={headerImage} alt="soufi" className="w-5/6 -mr-20" />
+      <div className="px-4 lg:px-20 flex items-center flex-wrap gap-10 lg:gap-0">
+        <section className="lg:w-1/2 w-full">
+          <img src={headerImage} alt="soufi" className="w-5/6 lg:-mr-20 mr-5" />
         </section>
-        <section className="w-1/2 text-center">
-          <h1 className="mb-6  font-dana-bold">
+        <section className="lg:w-1/2 text-center w-full">
+          <h1 className="mb-6  font-dana-bold leading-[3.6rem] text-3xl">
             آموزش برنامه نویسی با حال خوب :){" "}
           </h1>
           <p className="text-xl">

@@ -60,8 +60,8 @@ const RegisterForm = () => {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <div className="p-4 w-[390px] mx-auto bg-slate-50 border rounded-lg">
+    <div className="flex flex-col  justify-center">
+      <div className="p-4 w-[390px] mx-auto bg-slate-50 border rounded-lg mt-24">
         <div className="py-6">
           <h2 className="text-[#BABECC] text-4xl font-bold text-center mb-6">
             فرم ورود
