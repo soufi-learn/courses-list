@@ -22,24 +22,26 @@ const ProductsList = () => {
   );
 
   return (
-    <div className="container mt-10">
-      <div className="flex justify-between mb-10">
+    <div className="container px-8 mt-10">
+      <div className="flex flex-wrap justify-between gap-8 mb-10">
         <h3>دوره های آموزشی صوفی لرن</h3>
 
-        <div className="flex items-center gap-4">
-          <label className=" toggle-switch">
+        <div className="flex items-center gap-2 toggle-switch">
+          <label className="relative inline-block w-16 h-8 cursor-pointer">
             <input
               type="checkbox"
+              className="sr-only peer"
               checked={showFreeCourses}
               onChange={() => setShowFreeCourses((prevState) => !prevState)}
             />
-            <span className=" slider round"></span>
+            <span className="absolute inset-0 transition-all bg-gray-300 rounded-full peer-checked:bg-indigo-300"></span>
+            <span className="absolute w-5 h-5 bg-white rounded-full top-1/2 left-[5px] transform -translate-y-1/2 transition-transform peer-checked:translate-x-[34px] peer-checked:bg-indigo-600"></span>
           </label>
           <span className="font-bold">دوره های رایگان</span>
         </div>
       </div>
 
-      <div className="flex items-start gap-6">
+      <div className="flex flex-wrap items-start gap-6">
         {filteredCourses.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
