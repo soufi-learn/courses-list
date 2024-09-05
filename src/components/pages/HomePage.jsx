@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <>
-      <div className="px-4 lg:px-20 flex items-center flex-wrap gap-10 lg:gap-0">
+      <div className="px-4 lg:px-20 flex items-center flex-wrap gap-10 lg:gap-0 mb-16">
         <section className="lg:w-1/2 w-full">
           <img src={headerImage} alt="soufi" className="w-5/6 lg:-mr-20 mr-5" />
         </section>
