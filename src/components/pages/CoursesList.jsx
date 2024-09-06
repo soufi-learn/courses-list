@@ -10,7 +10,7 @@ import { useLocation } from "react-router-dom";
 const CoursesList = () => {
   const location = useLocation();
 
-  const showFilterButton = location.pathname === "/courses";
+  const inCoursesPage = location.pathname === "/courses";
 
   // State to toggle between free and paid products
   const [showFreeCourses, setShowFreeCourses] = useState(false);
@@ -33,11 +33,11 @@ const CoursesList = () => {
   return (
     <div className="container px-6 mt-10">
       <div className="flex flex-wrap justify-center flex-col lg:flex-row lg:justify-start gap-8 mb-10">
-        <h3 className={showFilterButton ? "text-start" : "text-center"}>
+        <h3 className={inCoursesPage ? "text-start" : "text-center"}>
           دوره های آموزشی صوفی لرن
         </h3>
 
-        {showFilterButton && (
+        {inCoursesPage && (
           <div className="flex flex-1 lg:dir-ltr items-center  gap-2 toggle-switch">
             <label className="relative inline-block w-16 h-8 cursor-pointer">
               <input
@@ -55,9 +55,13 @@ const CoursesList = () => {
       </div>
 
       <div className="flex flex-wrap items-start justify-center lg:justify-start ">
-        {filteredCourses.map((product, index) => (
-          <CourseCard key={index} product={product} />
-        ))}
+        {inCoursesPage
+          ? filteredCourses.map((product, index) => (
+              <CourseCard key={index} product={product} />
+            ))
+          : products.map((product, index) => (
+              <CourseCard key={index} product={product} />
+            ))}
       </div>
     </div>
   );
