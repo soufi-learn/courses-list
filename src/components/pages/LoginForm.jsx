@@ -26,32 +26,9 @@ const validate = (values) => {
 };
 
 const onSubmit = (values, navigate) => {
-  fetch("http://localhost:8080/otp/send", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      phone: values.phone,
-    }),
-  })
-    .then((response) => {
-      if (response.ok) {
-        response.json().then((data) => {
-          const verifyCode = data.verifyCode;
-          alert(verifyCode);
-          navigate("/verify");
-        });
-      } else {
-        return response.json().then((errorData) => {
-          throw errorData.message || "مشکلی پیش آمده! لطفا بعدا تلاش کنید";
-        });
-      }
-    })
-    // when we encounter error in sending phone number to API
-    .catch((error) => {
-      alert(error.message);
-    });
+  const verifyCode = Math.floor(10000 + Math.random() * 90000);
+  alert(verifyCode);
+  navigate("/verify");
 };
 
 const RegisterForm = () => {

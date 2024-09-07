@@ -1,4 +1,5 @@
 import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   code: "",
@@ -6,10 +7,6 @@ const initialValues = {
 
 const validate = (values) => {
   const errors = {};
-
-  if (!values.name) {
-    errors.name = "یه اسمی وارد کن گلم";
-  }
 
   if (!values.code) {
     errors.code = "نمیخای چیزی وارد کنی؟";
@@ -20,20 +17,23 @@ const validate = (values) => {
   return errors;
 };
 
-const onSubmit = (values) => {
-  console.log(values);
+const onSubmit = (navigate) => {
+  alert("ثبت نامت با موفقیت انجام شد دلبر 😍💙");
+  navigate("/");
 };
 
 const VerifyForm = () => {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues,
     validate,
-    onSubmit,
+    onSubmit: () => onSubmit(navigate),
   });
 
   return (
-    <div className="flex flex-col items-center justify-center mt-24">
-      <div className="p-4 w-[390px] mx-auto bg-slate-50 border rounded-lg">
+    <div className="flex flex-col items-center justify-center px-4 mt-24 ">
+      <div className="p-4 w-full sm:w-[390px] mx-auto bg-slate-50 border rounded-lg">
         <div className="py-6">
           <h2 className="text-[#BABECC] text-4xl font-bold text-center mb-6">
             فرم ورود
