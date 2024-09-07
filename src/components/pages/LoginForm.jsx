@@ -1,4 +1,5 @@
 import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   name: "",
@@ -24,7 +25,7 @@ const validate = (values) => {
   return errors;
 };
 
-const onSubmit = (values) => {
+const onSubmit = (values, navigate) => {
   fetch("http://localhost:8080/otp/send", {
     method: "POST",
     headers: {
@@ -39,6 +40,7 @@ const onSubmit = (values) => {
         response.json().then((data) => {
           const verifyCode = data.verifyCode;
           alert(verifyCode);
+          navigate("/verify");
         });
       } else {
         return response.json().then((errorData) => {
@@ -53,20 +55,22 @@ const onSubmit = (values) => {
 };
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues,
     validate,
-    onSubmit,
+    onSubmit: (values) => onSubmit(values, navigate),
   });
 
   return (
     <div className="flex flex-col justify-center px-4">
-      <div className="p-4 w-full sm:w-[390px] mx-auto bg-slate-50 border rounded-lg mt-[3rem]">
-        <div className="py-6">
+      <div className="px-4 w-full sm:w-[390px] mx-auto bg-slate-50 border rounded-lg mt-[3rem]">
+        <div className="py-4">
           <h2 className="text-[#BABECC] text-4xl font-bold text-center mb-6">
             فرم ورود
           </h2>
-          <p className="text-slate-500">لطفا شماره موبایل خود را وارد کنید</p>
+          <p className="text-slate-500">اطلاعاتت رو وارد کن بلا 🥰</p>
         </div>
 
         <form className="relative" onSubmit={formik.handleSubmit}>
