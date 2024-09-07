@@ -35,7 +35,7 @@ const CoursesList = () => {
   );
 
   return (
-    <div className="container px-6 mt-10">
+    <div className="container mt-10">
       <div className="flex flex-col flex-wrap justify-center gap-8 mb-10 lg:flex-row lg:justify-start">
         <h3 className={inCoursesPage ? "text-start" : "text-center"}>
           دوره های آموزشی صوفی لرن
