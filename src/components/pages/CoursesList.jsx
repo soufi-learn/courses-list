@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CourseCard from "../courseCard";
 import img1 from "../../assets/images/img-1.jpg";
 import img2 from "../../assets/images/img-2.jpg";
@@ -9,6 +9,10 @@ import { useLocation } from "react-router-dom";
 
 const CoursesList = () => {
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   const inCoursesPage = location.pathname === "/courses";
 
@@ -32,13 +36,13 @@ const CoursesList = () => {
 
   return (
     <div className="container px-6 mt-10">
-      <div className="flex flex-wrap justify-center flex-col lg:flex-row lg:justify-start gap-8 mb-10">
+      <div className="flex flex-col flex-wrap justify-center gap-8 mb-10 lg:flex-row lg:justify-start">
         <h3 className={inCoursesPage ? "text-start" : "text-center"}>
           دوره های آموزشی صوفی لرن
         </h3>
 
         {inCoursesPage && (
-          <div className="flex flex-1 lg:dir-ltr items-center  gap-2 toggle-switch">
+          <div className="flex items-center flex-1 gap-2 lg:dir-ltr toggle-switch">
             <label className="relative inline-block w-16 h-8 cursor-pointer">
               <input
                 type="checkbox"
