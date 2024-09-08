@@ -4,7 +4,6 @@
 
 @layer base {
   body {
-    @apply text-white bg-slate-800;
     font-family: "dana-light", "sans-serif";
   }
 

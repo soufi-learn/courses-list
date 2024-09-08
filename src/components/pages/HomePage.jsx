@@ -5,28 +5,28 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <>
-      <div className="px-4 lg:px-20 flex items-center flex-wrap gap-10 lg:gap-0 mb-16">
-        <section className="lg:w-1/2 w-full">
-          <img src={headerImage} alt="soufi" className="w-5/6 lg:-mr-20 mr-5" />
+      <div className="flex flex-wrap items-center gap-10 px-4 mb-16 lg:px-20 lg:gap-0">
+        <section className="w-full lg:w-1/2">
+          <img src={headerImage} alt="soufi" className="w-5/6 mr-5 lg:-mr-20" />
         </section>
-        <section className="lg:w-1/2 text-center w-full">
-          <h1 className="mb-6  font-dana-bold leading-[3.6rem] text-3xl">
+        <section className="w-full text-center lg:w-1/2">
+          <h1 className="mb-6  font-dana-bold leading-[3.6rem] text-3xl dark:text-white">
             آموزش برنامه نویسی با حال خوب :){" "}
           </h1>
-          <p className="text-xl">
+          <p className="text-xl dark:text-white">
             با صوفی لرن برنامه نویسی رو با انرژی مثبت و حال خوب یاد بگیر
           </p>
 
-          <div className="flex gap-4 items-center justify-center mt-10">
+          <div className="flex items-center justify-center gap-4 mt-10">
             <Link
               to="courses"
-              className="bg-indigo-600 hover:bg-indigo-700 py-2 px-4 rounded-md"
+              className="px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
             >
               مشاهده دوره ها
             </Link>
             <Link
               to="login"
-              className="bg-slate-700/50 py-2 px-4 rounded-md hover:bg-slate-600/50"
+              className="px-4 py-2 text-white rounded-md bg-slate-700 dark:bg-slate-700/50 dark:hover:bg-slate-600/50 hover:bg-slate-600"
             >
               ثبت نام
             </Link>
