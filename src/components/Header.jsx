@@ -9,9 +9,14 @@ import { FaTimes } from "react-icons/fa";
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
   }, [isDarkMode]);
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className="flex items-center justify-between px-4 py-4 m-4 transition-all rounded-lg md:px-10 bg-slate-200 dark:bg-slate-900">
@@ -37,6 +42,7 @@ const Header = () => {
             <Link
               to="/"
               className="block p-3 text-center transition-all border-y bg-slate-900/85 hover:bg-black/50 md:bg-transparent md:hover:bg-transparent md:border-none md:p-0 md:inline hover:dark:text-indigo-300"
+              onClick={handleLinkClick}
             >
               صفحه اصلی
             </Link>
@@ -45,6 +51,7 @@ const Header = () => {
             <Link
               to="courses"
               className="block p-3 text-center transition-all border-y bg-slate-900/85 hover:bg-black/50 md:bg-transparent md:hover:bg-transparent md:border-none md:p-0 md:inline hover:dark:text-indigo-300"
+              onClick={handleLinkClick}
             >
               دوره ها
             </Link>
@@ -53,6 +60,7 @@ const Header = () => {
             <Link
               to="about-us"
               className="block p-3 text-center transition-all border-y bg-slate-900/85 hover:bg-black/50 md:bg-transparent md:hover:bg-transparent md:border-none md:p-0 md:inline hover:dark:text-indigo-300"
+              onClick={handleLinkClick}
             >
               درباره ما
             </Link>
