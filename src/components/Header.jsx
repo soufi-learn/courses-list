@@ -3,35 +3,56 @@ import { Link } from "react-router-dom";
 import loginDarkSvg from "../assets/icons/login-dark.svg";
 import loginLightSvg from "../assets/icons/login-light.svg";
 import { HiOutlineSun, HiOutlineMoon } from "react-icons/hi";
+import { FaBarsStaggered } from "react-icons/fa6";
+import { FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
   }, [isDarkMode]);
 
   return (
-    <div className="flex items-center justify-between px-10 py-4 m-4 transition-all rounded-lg bg-slate-200 dark:bg-slate-900">
+    <div className="flex items-center justify-between px-4 py-4 m-4 transition-all rounded-lg md:px-10 bg-slate-200 dark:bg-slate-900">
+      <button
+        className="md:hidden"
+        onClick={() => setIsMenuOpen((prevState) => !prevState)}
+      >
+        <FaBarsStaggered className="text-2xl dark:text-white" />
+      </button>
       <nav>
-        <ul className="md:static md:flex-row md:h-auto fixed top-0 right-0 flex flex-col items-center justify-center w-full h-screen gap-6 font-bold text-white md:text-black backdrop-blur-[8px] bg-slate-900/85 dark:text-white dark:font-medium md:bg-transparent">
-          <li>
-            <Link to="/" className="transition-all hover:dark:text-indigo-300">
+        <ul
+          className={`md:static  z-10 md:flex-row md:h-auto fixed top-0 transition-all duration-500 flex flex-col items-center pt-36 md:pt-0 w-full h-screen gap-4 md:gap-6 font-bold text-white md:text-black backdrop-blur-[8px] bg-slate-900/85 dark:text-white dark:font-medium md:bg-transparent ${
+            isMenuOpen ? "right-0" : "-right-full"
+          }`}
+        >
+          <button
+            className="absolute text-2xl top-10 right-8 md:hidden"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <FaTimes />
+          </button>
+          <li className="w-full md:w-auto">
+            <Link
+              to="/"
+              className="block p-3 text-center transition-all border-y bg-slate-900/85 hover:bg-black/50 md:bg-transparent md:hover:bg-transparent md:border-none md:p-0 md:inline hover:dark:text-indigo-300"
+            >
               صفحه اصلی
             </Link>
           </li>
-          <li>
+          <li className="w-full md:w-auto">
             <Link
               to="courses"
-              className="transition-all hover:dark:text-indigo-300"
+              className="block p-3 text-center transition-all border-y bg-slate-900/85 hover:bg-black/50 md:bg-transparent md:hover:bg-transparent md:border-none md:p-0 md:inline hover:dark:text-indigo-300"
             >
               دوره ها
             </Link>
           </li>
-          <li>
+          <li className="w-full md:w-auto">
             <Link
               to="about-us"
-              className="transition-all hover:dark:text-indigo-300"
+              className="block p-3 text-center transition-all border-y bg-slate-900/85 hover:bg-black/50 md:bg-transparent md:hover:bg-transparent md:border-none md:p-0 md:inline hover:dark:text-indigo-300"
             >
               درباره ما
             </Link>
