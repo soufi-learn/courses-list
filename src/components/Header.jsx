@@ -14,21 +14,24 @@ const Header = () => {
   return (
     <div className="flex items-center justify-between px-10 py-4 m-4 transition-all rounded-lg bg-slate-200 dark:bg-slate-900">
       <nav>
-        <ul className="flex gap-6 font-bold text-black dark:text-white dark:font-medium">
+        <ul className="md:static md:flex-row md:h-auto fixed top-0 right-0 flex flex-col items-center justify-center w-full h-screen gap-6 font-bold text-white md:text-black backdrop-blur-[8px] bg-slate-900/85 dark:text-white dark:font-medium md:bg-transparent">
           <li>
-            <Link to="/" className="transition-all hover:text-indigo-300">
+            <Link to="/" className="transition-all hover:dark:text-indigo-300">
               صفحه اصلی
             </Link>
           </li>
           <li>
-            <Link to="courses" className="transition-all hover:text-indigo-300">
+            <Link
+              to="courses"
+              className="transition-all hover:dark:text-indigo-300"
+            >
               دوره ها
             </Link>
           </li>
           <li>
             <Link
               to="about-us"
-              className="transition-all hover:text-indigo-300"
+              className="transition-all hover:dark:text-indigo-300"
             >
               درباره ما
             </Link>
