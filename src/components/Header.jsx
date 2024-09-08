@@ -1,19 +1,15 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import loginDarkSvg from "../assets/icons/login-dark.svg";
 import loginLightSvg from "../assets/icons/login-light.svg";
-
 import { HiOutlineSun, HiOutlineMoon } from "react-icons/hi";
-import { useState } from "react";
 
 const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // Toggle function
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-
-    document.documentElement.classList.toggle("dark", !isDarkMode);
-  };
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDarkMode);
+  }, [isDarkMode]);
 
   return (
     <div className="flex items-center justify-between px-10 py-4 m-4 transition-all rounded-lg bg-slate-200 dark:bg-slate-900">
@@ -43,7 +39,7 @@ const Header = () => {
       <div className="flex gap-6 ">
         <button
           className="flex items-center justify-center w-10 h-10 text-2xl text-white rounded-full bg-slate-600"
-          onClick={toggleTheme}
+          onClick={() => setIsDarkMode(!isDarkMode)}
         >
           {isDarkMode ? <HiOutlineSun /> : <HiOutlineMoon />}
         </button>

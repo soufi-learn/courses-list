@@ -35,9 +35,13 @@ const CoursesList = () => {
   );
 
   return (
-    <div className="container mt-10">
+    <div className="px-4 mt-10 md:px-10 xl:px-16">
       <div className="flex flex-col flex-wrap justify-center gap-8 mb-10 lg:flex-row lg:justify-start">
-        <h3 className={inCoursesPage ? "text-start" : "text-center"}>
+        <h3
+          className={`${
+            inCoursesPage ? "text-start" : "text-center"
+          } dark:text-white`}
+        >
           دوره های آموزشی صوفی لرن
         </h3>
 
@@ -53,7 +57,7 @@ const CoursesList = () => {
               <span className="absolute inset-0 transition-all bg-gray-300 rounded-full peer-checked:bg-indigo-300"></span>
               <span className="absolute w-5 h-5 bg-white rounded-full top-1/2 left-[5px] transform -translate-y-1/2 transition-transform peer-checked:translate-x-[34px] peer-checked:bg-indigo-600"></span>
             </label>
-            <span className="font-bold">دوره های رایگان</span>
+            <span className="font-bold dark:text-white">دوره های رایگان</span>
           </div>
         )}
       </div>
