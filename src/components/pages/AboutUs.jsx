@@ -17,7 +17,7 @@ const AboutUs = () => {
           موسس برند آموزشی{" "}
           <a
             href="https://www.instagram.com/soufi_learn"
-            className="text-indigo-300 hover:text-indigo-200"
+            className="text-indigo-600 dark:text-indigo-300 hover:text-indigo-200"
           >
             صوفی لرن
           </a>
