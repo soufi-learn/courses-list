@@ -17,6 +17,7 @@ const Header = () => {
   const handleLinkClick = () => {
     setIsMenuOpen(false);
   };
+  
 
   return (
     <div className="flex items-center justify-between px-4 py-4 m-4 transition-all rounded-lg md:px-10 bg-slate-200 dark:bg-slate-900">
