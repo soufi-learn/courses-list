@@ -13,6 +13,15 @@ const AboutUs = () => {
       <ul>
         <li className="py-1">۴ سال سابقه برنامه نویسی بصورت خودآموز</li>
         <li className="py-1">۲ سال سابقه تدریس فرانت اند بصورت حرفه ای</li>
+        <li className="py-1">
+          موسس برند آموزشی{" "}
+          <a
+            href="https://www.instagram.com/soufi_learn"
+            className="text-indigo-300 hover:text-indigo-200"
+          >
+            صوفی لرن
+          </a>
+        </li>
       </ul>
       <img
         src={aboutUsImage}
